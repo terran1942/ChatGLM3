@@ -38,7 +38,7 @@ from transformers import (
 ModelType = Union[PreTrainedModel, PeftModelForCausalLM]
 TokenizerType = Union[PreTrainedTokenizer, PreTrainedTokenizerFast]
 
-MODEL_PATH = os.environ.get('MODEL_PATH', 'THUDM/chatglm3-6b')
+MODEL_PATH = os.environ.get('MODEL_PATH', '~/ChatGLM3/finetune_demo/output/checkpoint-2000')
 TOKENIZER_PATH = os.environ.get("TOKENIZER_PATH", MODEL_PATH)
 
 
@@ -148,7 +148,7 @@ def predict(history, max_length, top_p, temperature):
 
 
 with gr.Blocks() as demo:
-    gr.HTML("""<h1 align="center">ChatGLM3-6B Gradio Simple Demo</h1>""")
+    gr.HTML("""<h1 align="center">ChatGLM3-6B</h1>""")
     chatbot = gr.Chatbot()
 
     with gr.Row():
